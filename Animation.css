@@ -1,0 +1,158 @@
+*{
+    margin: 0; padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    display: block;
+}
+/* 去除默认样式 */
+body{background-image: url(./image/Animation_Initial_background.jpg); background-repeat: no-repeat; background-size: 100% auto;
+
+}
+
+.box{
+    height: 350px; width: 400px; ;
+    margin: 150px auto; border: 1px #00000000 solid;
+    perspective: 3000px; perspective-origin: top ;
+}
+.box ul{
+    width: 220px; height: 220px; position: relative;
+    top: 50%; left: 50%; margin-top: -110px; margin-left: -110px;
+    transform-style: preserve-3d;
+}
+.box ul li{
+    width: 100%; height: 100%;
+    position: absolute;
+}
+/* 设置样式 */
+.box ul li img{
+    width: 220px; height: 220px;
+} 
+.img1 {
+    left: 0; top: 0;
+}
+.box:hover .img1{
+    transition: all 2s;
+    transform: translateZ(200px);
+}
+.img2 {
+    left: 220px; top:0 ;transform-origin: left;
+    transform: rotateY(90deg);
+}
+.box:hover .img2{
+    transform: translateX(200px) rotateY(90deg);
+}
+.img3 {
+    left: -220px; top: 0;transform-origin: right;
+    transform: rotateY(-90deg);
+}
+.box:hover .img3{
+    transform: translateX(-200px) rotateY(-90deg);
+}
+.img4 {
+    left: 0; top: 220px;transform-origin:top;
+    transform: rotateX(-90deg);
+}
+.box:hover .img4{
+    transform: translateY(200px) rotateX(-90deg);
+}
+.img5 {
+    left: 0; top: -220px;transform-origin: bottom;
+    transform: rotateX(90deg);
+}
+.box:hover .img5{
+    transform: translateY(-200px) rotateX(90deg);
+}
+.img6 {
+    left: 0; top:0;
+    transform: translateZ(-220px) rotateX(180deg);
+}
+.box:hover .img6{
+    transform: translatez(-420px) rotateX(180deg);
+}
+/* 构建3D盒子 */
+.box ul li{
+    transition: all .8s;
+}
+.box ul{
+    transition: all 2s;
+    transform-origin: center center -110px;
+    animation-name: box_rotate;
+    animation-duration:13s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes box_rotate{
+    0%{transform:  rotateX(0) rotateY(0) rotateZ(0);}
+    33%{transform: rotateX(360deg) rotateY(360deg) rotateZ(0);}
+    67%{transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg);}
+    100%{transform:rotateX(720deg) rotateY(720deg) rotateZ(720deg);}
+}
+
+.play{
+    position: relative;
+    font-size: 75px;
+    width: 600px; height: 100px;
+    border: 0; border-radius: 50px;
+    margin: 100px auto; 
+    letter-spacing: 0.2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique; font-weight: 400;
+    background-image: linear-gradient(to right, #9fc1e8 ,#473b58 ,#a0a890, #aa7a77,#8c5750,
+    #d2afa5,#9cb8de,#6a8ea8,#152434,#9fc1e8);
+    background-size:400%;
+    outline: none;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 1;/*叠层定位 */
+}
+
+/* 发光效果 */
+.play:before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    bottom: -20px;
+    left: -20px;
+    right: -20px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, #9fc1e8 ,#473b58 ,#a0a890, #aa7a77,#8c5750,
+    #d2afa5,#9cb8de,#6a8ea8,#152434,#9fc1e8);
+    background-size: 400%;
+    /* 元素的位置 底层或者顶层  -值表示底层 + 值表示顶层 */
+    z-index: -1;
+    /* 设置模糊度 显示发光效果 */
+    filter: blur(20px);
+    transition: all 2s;
+    opacity: 0.2;
+}
+.play {
+    transition-property: unset;
+}
+.play a:link, .play a:visited{
+    color: #01fdfd;
+}
+.play:hover{
+    animation-name: light;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: all 1s;
+}
+.play:hover:before{
+    opacity: 1;
+    animation-name: light;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes light{
+    100%{
+        background-position: -400% ;
+    }
+}
