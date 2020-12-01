@@ -1,0 +1,127 @@
+body{
+    margin: 0;
+    padding: 0;
+    background:#303030;
+}
+#menu{
+    margin:0;
+    padding:0;
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+#menu li{
+    list-style: none;
+    display:inline-block;
+}
+#menu li a{
+    text-decoration: none;/*导航排版*/
+    position: relative;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: sans-serif;
+    display:block;
+    overflow:hidden;
+    transition:0.7s all;
+    padding:6px 20px;
+}
+#menu li a:before{
+    content:'';
+    width:60px;
+    position:absolute;
+    border-bottom:4px solid #ffffff;
+    bottom:0;
+    right:350px;
+    transition:0.7s all;/*下划线延迟*/
+}
+#menu li a:hover:before{
+    right:0
+}
+.container{
+    position:relative;
+    width: 100%;  /*宽度保持完整*/
+    height:800px;/*长度配合字体*/
+    background:#303030;
+    background-image: url('./image/aboutus.jpg');
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin:0;
+ }
+.container img{
+    width: 100%;
+    height: 100%;
+    
+}
+
+    .h1{
+        color: #ffffff;
+        text-align: center;
+        font-size: 70px;
+        letter-spacing: 8px;
+        margin-top: 520px;
+        font-family:STFangsong,Fangsong;/*字体还可以改，但我还没找到哼合适的*/
+    }
+    .p1{
+        color: #ffffff;
+        text-align: center;
+        font-size: 15px;
+        letter-spacing: 1px;
+        line-height: 2.2;
+        font-family:
+    }
+    .h2{
+        float: left;
+        display: inline;
+        color: #c8c8c8;
+        text-align: left;
+        font-weight: lighter;
+        font-size: 2px;/*调整两个span的间距*/
+        margin-top: 35px;
+    }
+    .h2 span{
+        font-size: 65px;/*字体真正大小*/
+        animation:animate 1.2s linear infinite;
+    }
+    .h2 span:nth-child(1)/*通过延迟完成霓虹灯特效*/
+    {
+        animation-delay: 0s;
+    }
+    .h2 span:nth-child(2)
+    {
+        animation-delay: 0.3s;
+    }
+    .h2 span:nth-child(3)
+    {
+        animation-delay: 0.6s;
+    }
+    .h2 span:nth-child(4)
+    {
+        animation-delay: 0.9s;
+    }
+    @keyframes animate
+    {
+        0%,80%
+        {
+            color:#c8c8c8;/*这个灰度正好合适*/
+            text-shadow:none;
+        }
+        100%
+        {
+            color:#d8d8d8;
+            text-shadow:0 0 10px #d8d8d8 ,
+                        0 0 20px #d8d8d8,
+                        0 0 40px #d8d8d8;
+        }
+    }
+    .p2{
+        float:left;
+        display: inline;/*两段文字并排*/
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 2.2;
+        margin-top: 30px;
+        margin-left: 80px;
+    }
+    
