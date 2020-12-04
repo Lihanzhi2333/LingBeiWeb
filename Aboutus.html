@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatiable" content="ie=edge">
     <link rel="stylesheet" href="Aboutus.css">
     <title>关于我们</title>
+    <link rel="stylesheet" href="swiper.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <ul id="menu"><!--导航-->
@@ -39,11 +41,71 @@
                 <span>们</span>
             </p>
         </div>
-    <div class="p2"><!--尾部文字-->
-            <p>
-                我们累成狗了<br>真的<br>头发掉了好多<br>QAQ
-                <!--这里的文案也可以改-->
-            </p>
+        <div class="p2"><!--尾部文字-->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="slidertext">
+                                <h3>常元和</h3>
+                            </div>
+                            <div class="content">
+                            <p>blablablablablablablablablabla<br>blablablablablablablablablabla<br>blablablablablablablablablabla<br>blablablablablablablablablabla<br>blablablablablablablablablabla<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="slidertext">
+                                <h3>李铭熙</h3>
+                            </div>
+                            <div class="content">
+                            <p>blablablablablablablablablabla<br>blablablablablablablablablabla<br>blablablablablablablablablabla<br>blablablablablablablablablabla<br>blablablablablablablablablabla<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="slidertext">
+                                <h3>李涵之</h3>
+                            </div>
+                            <div class="content">
+                            <p>blablablablablablablablablabla<br>blablablablablablablablablabla<br>blablablablablablablablablabla<br>blablablablablablablablablabla<br>blablablablablablablablablabla<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="slidertext">
+                                <h3>刘小禾</h3>
+                            </div>
+                            <div class="content">
+                            <p>blablablablablablablablablabla<br>blablablablablablablablablabla<br>blablablablablablablablablabla<br>blablablablablablablablablabla<br>blablablablablablablablablabla<br></p>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+             <script src="swiper.min.js"></script>
+             <script>
+                var swiper = new Swiper('.swiper-container', {
+                  effect: 'coverflow',
+                  grabCursor: true,
+                  centeredSlides: true,
+                  slidesPerView: 'auto',
+                  coverflowEffect: {
+                    rotate: 30,
+                    stretch: 0,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows : true,
+                  },
+                  pagination: {
+                    el: '.swiper-pagination',
+                  },
+                });
+              </script>
         </div>
+    </div>
 </body>
 </html>
